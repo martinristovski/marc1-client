@@ -36,7 +36,7 @@ const LoginForm = (props) => {
 
       <h2>Login</h2>
       <input placeholder='Username' className='form-control' value={username} onChange={event => setUsername(event.target.value)}/>
-      <input placeholder='Password' className='form-control mt-3' value={password} onChange={event => setPassword(event.target.value)}/>
+      <input type='password' placeholder='Password' className='form-control mt-3' value={password} onChange={event => setPassword(event.target.value)}/>
       <button className='btn btn-primary mt-3' onClick={() => props.onSubmit({username, password})}>Login</button>
     </div>
   )
