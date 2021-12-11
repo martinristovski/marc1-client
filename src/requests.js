@@ -3,6 +3,23 @@ import axios from 'axios';
 const url = 'http://formhoster-env-1.eba-v8gea4pu.us-east-2.elasticbeanstalk.com';
 const formId = '4ncksMxtYUgyh_L80zmhHb_9s0WPN-izfzVxTO3gfIA'
 
+const apiKey = 'yII26qwLhGpy7D-9pWDDk7B5S8r1hLsfdvfNZc9rTxA'
+const uuid = 'cd391c6b-d52c-4ea2-b0ba-fe288c1e5ec2'
+
+export const getOrders = (onSuccess) => {
+  axios.get(`${url}/developer/${uuid}/${formId}/response`, {
+    headers: {
+      'API-KEY': apiKey,
+    }
+  })
+  .then(response => {
+    onSuccess(response)
+  })
+  .catch(error => {
+    console.log(error);
+  })
+}
+
 export const submitOrderInfo = (orders, phoneNumber, onSuccess, onError) => {
   const foodItems = [];
   const drinkItems = [];

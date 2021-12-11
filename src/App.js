@@ -11,6 +11,7 @@ function App() {
   return (
     <div className="App">
       <Routes>
+        <Route path="/admin" element={<Pages.Admin/>} />
         <Route path="/" element={<Pages.Homepage/>} />
       </Routes>
     </div>
