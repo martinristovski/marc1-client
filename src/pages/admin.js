@@ -29,6 +29,11 @@ const LoginForm = (props) => {
 
   return (
     <div className='container'>
+
+      {props.authErrors !== "" 
+        ? <div class="alert alert-danger" role="alert">{props.authErrors}</div>
+        : null}
+
       <h2>Login</h2>
       <input placeholder='Username' className='form-control' value={username} onChange={event => setUsername(event.target.value)}/>
       <input placeholder='Password' className='form-control mt-3' value={password} onChange={event => setPassword(event.target.value)}/>
@@ -41,6 +46,7 @@ const Admin = () => {
   const [orders, setOrders] = useState([]);
   const authenticated = useSelector(state => state.auth.authenticated);
   const dispatch = useDispatch();
+  const [authErrors, setAuthErrors] = useState("");
 
   useEffect(() => {
     getOrders(response => {
@@ -58,9 +64,11 @@ const Admin = () => {
         </li>
       </Layout.Navbar>
 
-      {authenticated ? <OrderInfo orders={orders}/> : <LoginForm onSubmit={data => {
+      {authenticated ? <OrderInfo orders={orders}/> : <LoginForm authErrors={authErrors} onSubmit={data => {
         if (data.username === 'admin' && data.password === 'password') {
           dispatch(authenticate())
+        } else {
+          setAuthErrors("invalid credentials");
         }
       }}/>}
 
