@@ -9,8 +9,9 @@ const Admin = () => {
 
   useEffect(() => {
     getOrders(response => {
-      setOrders(response.data);
-      console.log(orders);
+      const responseOrders = response.data;
+      responseOrders.reverse();
+      setOrders(responseOrders);
     })
   }, [])
 
