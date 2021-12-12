@@ -7,7 +7,7 @@ const apiKey = 'yII26qwLhGpy7D-9pWDDk7B5S8r1hLsfdvfNZc9rTxA'
 const uuid = 'cd391c6b-d52c-4ea2-b0ba-fe288c1e5ec2'
 
 export const getOrders = (onSuccess) => {
-  axios.get(`${url}/developer/${uuid}/${formId}/response/`, {
+  axios.get(`${url}/developer/${uuid}/${formId}/response`, {
     headers: {
       'API-KEY': apiKey,
     }
@@ -31,7 +31,7 @@ export const submitOrderInfo = (orders, phoneNumber, onSuccess, onError) => {
     noteItems.push(order.notes);
   });
 
-  axios.post(`${url}/user/submit_form/`, {
+  axios.post(`${url}/user/submit_form`, {
     form_id: formId,
     submission_data: [
       {
