@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const url = 'http://formhoster-env-1.eba-v8gea4pu.us-east-2.elasticbeanstalk.com';
+const url = 'https://4xexwmktvc.execute-api.us-east-2.amazonaws.com/';
 const formId = '4ncksMxtYUgyh_L80zmhHb_9s0WPN-izfzVxTO3gfIA'
 
 const apiKey = 'yII26qwLhGpy7D-9pWDDk7B5S8r1hLsfdvfNZc9rTxA'
