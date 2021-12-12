@@ -21,17 +21,17 @@ const FirstPage = (props) => {
       <label>Food Item</label>
       <select className="form-control" value={order.food} onChange={(event) => setOrder({...order, food: event.target.value})}>
         <option disabled={order.food !== ''} value=''>-- select an option --</option>
-        <option value='Option 1'>Option 1</option>
-        <option value='Option 2'>Option 2</option>
-        <option value='Option 3'>Option 3</option>
+        <option value='Air Fryer Wings'>Air Fryer Wings</option>
+        <option value='Crock Pot Chicken Drumsticks'>Crock Pot Chicken Drumsticks</option>
+        <option value='Maple Bacon Wings'>Maple Bacon Wings</option>
       </select>
 
       <label className='mt-3'>Drink Item</label>
       <select className="form-control" value={order.drink} onChange={(event) => setOrder({...order, drink: event.target.value})}>
         <option disabled={order.drink !== ''} value=''>-- select an option --</option>
-        <option value='Option 1'>Option 1</option>
-        <option value='Option 2'>Option 2</option>
-        <option value='Option 3'>Option 3</option>
+        <option value='Water'>Water</option>
+        <option value='Coke'>Coke</option>
+        <option value='Diet Coke'>Diet Coke</option>
       </select>
 
       <label className='mt-3'>Special notes</label>
